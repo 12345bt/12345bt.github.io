@@ -1,20 +1,14 @@
 # centos
 
-傻瓜式一键替换yum源
+傻瓜式一键替换yum源,5条命令 分5次在ssh里面输入
 
-第一种方法:  wget 下载安装
-
-1、备份
 
 mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
 
-2、下载新的CentOS-Base.repo 到/etc/yum.repos.d/
+cd /etc/yum.repos.d/
 
-CentOS 7
+wget https://12345bt.github.io/centos/CentOS-Base.repo
 
-wget -O /etc/yum.repos.d/CentOS-Base.repo https://12345bt.github.io/centos/CentOS-Base.repo
+yum clean all
 
-或者
-curl -o /etc/yum.repos.d/CentOS-Base.repo https://12345bt.github.io/centos/CentOS-Base.repo
-
-3、之后运行yum makecache生成缓存
+yum makecache
