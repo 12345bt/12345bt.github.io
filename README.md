@@ -5,10 +5,24 @@
 
 mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
 
-cd /etc/yum.repos.d/
-
-wget https://12345bt.github.io/centos/CentOS-Base.repo
+wget -O /etc/yum.repos.d/CentOS-Base.repo https://12345bt.github.io/centos/CentOS-Base.repo
 
 yum clean all
 
 yum makecache
+
+yum -y update
+
+
+
+163源
+
+mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
+
+wget -O /etc/yum.repos.d/CentOS-Base.repo https://12345bt.github.io/centos/CentOS7-Base-163.repo
+
+yum clean all
+
+yum makecache
+
+yum -y update
