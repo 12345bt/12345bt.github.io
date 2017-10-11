@@ -12,9 +12,9 @@ mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
 
 CentOS 7
 
-wget -O /etc/yum.repos.d/CentOS-Base.repo https://raw.githubusercontent.com/12345bt/centos/master/CentOS-Base.repo
+wget -O /etc/yum.repos.d/CentOS-Base.repo https://12345bt.github.io/centos/CentOS-Base.repo
 
 或者
-curl -o /etc/yum.repos.d/CentOS-Base.repo https://raw.githubusercontent.com/12345bt/centos/master/CentOS-Base.repo
+curl -o /etc/yum.repos.d/CentOS-Base.repo https://12345bt.github.io/centos/CentOS-Base.repo
 
 3、之后运行yum makecache生成缓存
