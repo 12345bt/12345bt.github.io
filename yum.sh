@@ -7,4 +7,3 @@ wget -O /etc/yum.repos.d/CentOS-Base.repo https://12345bt.github.io/centos/CentO
 wget -qO /etc/yum.repos.d/epel.repo https://12345bt.github.io/centos/epel-7.repo
 yum clean metadata
 yum makecache
-yum -y update
