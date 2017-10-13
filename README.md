@@ -18,4 +18,5 @@ pip list --outdated    #列出所有过期的库
 使用方法,也是非常傻瓜一键更新pip库
 
 pip install pip-review    #安装pip-review
+
 pip-review --local --interactive    #一键更新待更新的库,需要的按 Y 不需要的 N
