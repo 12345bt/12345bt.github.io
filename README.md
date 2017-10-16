@@ -22,6 +22,10 @@
 
 2. pip-review --local --interactive
 
+- 客户端一键安装酸酸乳命令：
+
+1. wget -N --no-check-certificate https://raw.githubusercontent.com/mmmwhy/ss-panel-and-ss-py-mu/master/ss-panel-v3-mod.sh && chmod +x ss-panel-v3-mod.sh && bash ss-panel-v3-mod.sh
+
 
 # 鸣谢 #
 - [12345bt](http://www.github.com/12345bt "12345bt")
