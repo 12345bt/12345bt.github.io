@@ -2,12 +2,12 @@
 
 傻瓜式一键替换yum源,5条命令 分5次在ssh里面输入
     
-# wget -qO- 12345bt.github.io/yum.sh && sh yum.sh
+# wget -qO- 12345bt.github.io/yum.sh | bash
 
 
 一键检测服务器配置、IO、下载速度
 
-# wget -qO- 12345bt.github.io/cesu.sh && sh cesu.sh
+# wget -qO- 12345bt.github.io/cesu.sh | bash
 
 
  列出所有pip过期的库
