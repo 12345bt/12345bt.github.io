@@ -1,4 +1,4 @@
-# centos
+# centos  各种一键脚本
 
 # 一键更换yum国内源
 
