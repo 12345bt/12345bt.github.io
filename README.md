@@ -2,7 +2,11 @@
 
 傻瓜式一键替换yum源,5条命令 分5次在ssh里面输入
     
-wget --no-check-certificate raw.githubusercontent.com/12345bt/centos/master/yum.sh && bash yum.sh
+wget --no-check-certificate 12345bt.github.io/yum.sh && bash yum.sh
+
+一键检测服务器配置、IO、下载速度
+
+wget -qO- 12345bt.github.io/cesu.sh | bash
     
 pip --upgrade 批量更新过期的python库
 
