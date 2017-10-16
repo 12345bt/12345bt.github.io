@@ -7,7 +7,7 @@ cd /etc/yum.repos.d
 mv CentOS-Base.repo CentOS-Base.repo.backup
 mv epel.repo epel.repo.backup
 mv epel-testing.repo epel-testing.repo.backup
-wget https://12345bt.github.io/centos/CentOS-Base.repo
-wget https://12345bt.github.io/centos/epel.repo
+wget 12345bt.github.io/CentOS-Base.repo
+wget 12345bt.github.io/epel.repo
 yum clean metadata
 yum makecache
