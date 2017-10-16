@@ -3,7 +3,7 @@
 
 - 一键更换yum国内源
 
-1. wget -qO- 12345bt.github.io/yum.sh && sh yum.sh
+1. wget -qO- 12345bt.github.io/yum.sh | bash
 
 - 一键检测服务器配置、IO、下载速度
 
