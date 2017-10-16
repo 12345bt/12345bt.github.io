@@ -5,6 +5,7 @@
 
 1. wget -qO- 12345bt.github.io/yum.sh | bash
 
+
 - 一键检测服务器配置、IO、下载速度
 
 1. wget -qO- 12345bt.github.io/cesu.sh | bash
