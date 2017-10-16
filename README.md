@@ -1,24 +1,30 @@
-# centos  各种一键脚本
+# linux 一键安装脚本 #
 
-# 一键更换yum国内源
 
-wget -qO- 12345bt.github.io/yum.sh | bash
+- 一键更换yum国内源
 
-# 一键检测服务器配置、IO、下载速度
+1. wget -qO- 12345bt.github.io/yum.sh | bash
 
-wget -qO- 12345bt.github.io/cesu.sh | bash
+- 一键检测服务器配置、IO、下载速度
 
-# 一键开启bbr加速
+1. - wget -qO- 12345bt.github.io/cesu.sh | bash
 
-wget --no-check-certificate 12345bt.github.io/bbr.sh
 
-chmod +x bbr.sh
+- 一键开启bbr加速
 
-./bbr.sh
+1. - wget --no-check-certificate 12345bt.github.io/bbr.sh
 
-# 一键更新pip库   pip-review使用方法
+2. - chmod +x bbr.sh
 
-pip install pip-review
+3. ./bbr.sh
 
-pip-review --local --interactive
 
+- 一键更新pip库   pip-review使用方法
+
+1. pip install pip-review
+
+2. pip-review --local --interactive
+
+
+# 鸣谢 #
+- [12345bt](http://www.github.com/12345bt "12345bt")
