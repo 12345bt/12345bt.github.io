@@ -9,12 +9,11 @@
 
 # wget -qO- 12345bt.github.io/cesu.sh | bash
 
-一键开启bbr加速
+# 一键开启bbr加速
 
-# wget --no-check-certificate 12345bt.github.io/bbr.sh
-# chmod +x bbr.sh
-# ./bbr.sh
-
+wget --no-check-certificate 12345bt.github.io/bbr.sh
+chmod +x bbr.sh
+./bbr.sh
 
 另外的也有人提到用 pip-review ，不想安装就没用
 使用方法,也是非常傻瓜一键更新pip库
