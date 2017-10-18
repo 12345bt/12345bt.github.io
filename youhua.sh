@@ -28,9 +28,7 @@ yum --enablerepo=elrepo-kernel -y install kernel-ml
 cat >> /etc/sysctl.conf << EOF
 vm.overcommit_memory = 1
 net.ipv4.ip_local_port_range = 1024 65000
-net.ipv4.netfilter.ip_conntrack_max = 2097152
 net.ipv4.tcp_tw_reuse = 1
-net.ipv4.tcp_tw_recycle = 1
 net.ipv4.tcp_timestamps = 0
 net.ipv4.tcp_syn_retries = 1
 net.ipv4.tcp_fin_timeout = 2
@@ -50,7 +48,6 @@ net.core.wmem_max = 16777216
 net.core.netdev_max_backlog = 262144
 net.core.wmem_default = 8388608
 net.core.rmem_default = 8388608
-net.ipv4.netfilter.ip_conntrack_tcp_timeout_established=180
 net.core.default_qdisc=fq
 net.ipv4.tcp_congestion_control=bbr
 EOF
