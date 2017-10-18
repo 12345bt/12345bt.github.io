@@ -12,6 +12,10 @@ wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-
 yum clean all
 yum makecache
 
+#yum安装常用库
+yum install -y gcc gcc-c++ vim unzip zip git
+yum install -y iostat sysstat
+
 #导入密钥
 rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
 #添加库
@@ -20,11 +24,7 @@ rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm
 yum install -y yum-plugin-fastestmirror
 yum --enablerepo=elrepo-kernel -y install kernel-ml
 
-#yum安装常用库
-yum install -y gcc gcc-c++ vim unzip zip git
-yum install -y iostat sysstat
-
-#内核参数优化
+#内核参数优化,配置开启BBR
 cat >> /etc/sysctl.conf << EOF
 vm.overcommit_memory = 1
 net.ipv4.ip_local_port_range = 1024 65000
@@ -54,7 +54,11 @@ net.ipv4.netfilter.ip_conntrack_tcp_timeout_established=180
 net.core.default_qdisc=fq
 net.ipv4.tcp_congestion_control=bbr
 EOF
+#加载新配置
 sysctl -p
+
+#修改默认启动内核
+grub2-set-default 0
 
 #重启服务器
 shutdown -r now
