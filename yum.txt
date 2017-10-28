@@ -1,15 +1,9 @@
-﻿
-#一键更换yum国内源
-mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
+替换除中文的正则
 
-cd /etc/yum.repos.d/
+([A-Za-z0-9_]+,)
 
-wget http://mirrors.163.com/.help/CentOS7-Base-163.repo
+#查看定时任务
+crontab  -l
 
-wget https://12345bt.github.io/centos/CentOS-Base.repo
-
-yum clean all
-
-yum makecache
-
-yum -y update
+#编辑定时任务
+crontab  -e
