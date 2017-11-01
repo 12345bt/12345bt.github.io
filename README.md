@@ -16,6 +16,15 @@
 3. ./bbr.sh
 
 
+- 网站历史记录IP,绕过CDN,追查真实IP地址
+
+1. http://www.viewdns.info/iphistory/?domain=www.vuln.cn
+2. http://toolbar.netcraft.com/site_report?url=t00ls.net
+3. https://www.domainiq.com/hosting_research
+4. http://toolbar.netcraft.com/site_report?url=xxoo.xom
+5. http://site.ip138.com/xxoo.xom
+
+
 - 一键更新pip库   pip-review使用方法
 
 1. pip install pip-review
