@@ -1,4 +1,6 @@
 #!/bin/bash
+#12345bt自用一键懒人脚本 centos7 64位系列
+#其他系统使用 出现问题 概不负责
 
 #添加公网DNS地址
 cat >> /etc/resolv.conf << EOF
@@ -16,13 +18,11 @@ yum makecache
 yum install -y gcc gcc-c++ vim unzip zip git
 yum install -y iostat sysstat
 
-#导入密钥
+#导入密钥  添加库  更新4.1.3内核
 rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
-#添加库
 rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm
-#更新内核
 yum install -y yum-plugin-fastestmirror
-yum --enablerepo=elrepo-kernel -y install kernel-ml
+yum --enablerepo=elrepo-kernel install  kernel-ml-devel kernel-ml -y
 
 #内核参数优化,配置开启BBR
 cat >> /etc/sysctl.conf << EOF
@@ -51,6 +51,7 @@ net.core.rmem_default = 8388608
 net.core.default_qdisc=fq
 net.ipv4.tcp_congestion_control=bbr
 EOF
+
 #加载新配置
 sysctl -p
 
