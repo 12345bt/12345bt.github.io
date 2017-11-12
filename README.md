@@ -34,7 +34,11 @@
 
 2. pip-review --local --interactive
 
-- 客户端一键安装酸酸乳命令：
+- 亚当与夏娃的电影剧情#
+- 剧情介绍：
+- 男人选 1 无任何副作用
+- 女人选择 2  并根据剧情走向输入相关密码 
+- 方可与亚当汇合 创造小亚当。
 
 1. wget -N --no-check-certificate https://raw.githubusercontent.com/mmmwhy/ss-panel-and-ss-py-mu/master/ss-panel-v3-mod.sh && chmod +x ss-panel-v3-mod.sh && bash ss-panel-v3-mod.sh
 
