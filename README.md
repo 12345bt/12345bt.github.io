@@ -24,6 +24,9 @@
 4. http://toolbar.netcraft.com/site_report?url=xxoo.xom
 5. http://site.ip138.com/xxoo.xom
 
+- 一键优化centos7 各项性能 更换yum源 开启bbr加速 
+
+1. wget --no-check-certificate 12345bt.github.io/youhua.sh && chmod +x youhua.sh && ./youhua.sh
 
 - 一键更新pip库   pip-review使用方法
 
