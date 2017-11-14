@@ -1,7 +1,7 @@
-# linux 一键安装脚本 #
+## linux 一键安装脚本 #
 
 
-- 一键更换yum国内源
+- *一键更换yum国内源*
 
 ```markdown
 wget -qO- 12345bt.github.io/yum.sh | bash
