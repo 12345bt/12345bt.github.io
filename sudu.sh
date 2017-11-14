@@ -61,7 +61,7 @@ disk_used_size=$( calc_disk ${disk_size2[@]} )
 
 clear
 next
-echo "${red}CPU 型号       : ${green}$cname"
+echo "CPU 型号             : $cname"
 echo "Number of cores      : $cores"
 echo "CPU frequency        : $freq MHz"
 echo "Total size of Disk   : $disk_total_size GB ($disk_used_size GB Used)"
