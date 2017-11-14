@@ -72,11 +72,11 @@ echo "发行版本     : $opsy"
 echo "系统类型     : $arch ($lbit Bit)"
 echo "内核版本     : $kern"
 io1=$( io_test )
-echo "第一次 I/O   : $io1"
+echo "I/O 测试     : $io1"
 io2=$( io_test )
-echo "第二次 I/O   : $io2"
+echo "I/O 测试     : $io2"
 io3=$( io_test )
-echo "第三次 I/O   : $io3"
+echo "I/O 测试     : $io3"
 ioraw1=$( echo $io1 | awk 'NR==1 {print $1}' )
 [ "`echo $io1 | awk 'NR==1 {print $2}'`" == "GB/s" ] && ioraw1=$( awk 'BEGIN{print '$ioraw1' * 1024}' )
 ioraw2=$( echo $io2 | awk 'NR==1 {print $1}' )
