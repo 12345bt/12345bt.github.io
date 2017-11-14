@@ -38,11 +38,15 @@ wget --no-check-certificate 12345bt.github.io/youhua.sh && chmod +x youhua.sh &&
 
 ```
 - 一键更新pip库   pip-review使用方法
+
 ```markdown
+
 pip install pip-review
 
 pip-review --local --interactive
+
 ```
+
 - 亚当与夏娃的电影剧情#
 - 剧情介绍：
 - 男人选 1 无任何副作用
