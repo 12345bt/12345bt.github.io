@@ -60,24 +60,23 @@ disk_used_size=$( calc_disk ${disk_size2[@]} )
 
 clear
 next
-echo "CPU 型号             : $cname"
-echo "Number of cores      : $cores"
-echo "CPU frequency        : $freq MHz"
-echo "Total size of Disk   : $disk_total_size GB ($disk_used_size GB Used)"
-echo "Total amount of Mem  : $tram MB ($uram MB Used)"
-echo "Total amount of Swap : $swap MB ($uswap MB Used)"
-echo "System uptime        : $up"
-echo "Load average         : $load"
-echo "OS                   : $opsy"
-echo "Arch                 : $arch ($lbit Bit)"
-echo "Kernel               : $kern"
-next
+echo "CPU 型号     : $cname"
+echo "CPU 核心     : $cores 颗"
+echo "CPU 频率     : $freq MHz"
+echo "硬盘大小     : $disk_total_size GB ($disk_used_size GB Used)"
+echo "Mem大小      : $tram MB ($uram MB Used)"
+echo "交换空间     : $swap MB ($uswap MB Used)"
+echo "运行时间     : $up"
+echo "当前负载     : $load"
+echo "发行版本     : $opsy"
+echo "系统类型     : $arch ($lbit Bit)"
+echo "内核版本     : $kern"
 io1=$( io_test )
-echo "I/O speed(1st run)   : $io1"
+echo "第一次 I/O   : $io1"
 io2=$( io_test )
-echo "I/O speed(2nd run)   : $io2"
+echo "第二次 I/O   : $io2"
 io3=$( io_test )
-echo "I/O speed(3rd run)   : $io3"
+echo "第三次 I/O   : $io3"
 ioraw1=$( echo $io1 | awk 'NR==1 {print $1}' )
 [ "`echo $io1 | awk 'NR==1 {print $2}'`" == "GB/s" ] && ioraw1=$( awk 'BEGIN{print '$ioraw1' * 1024}' )
 ioraw2=$( echo $io2 | awk 'NR==1 {print $1}' )
@@ -86,5 +85,5 @@ ioraw3=$( echo $io3 | awk 'NR==1 {print $1}' )
 [ "`echo $io3 | awk 'NR==1 {print $2}'`" == "GB/s" ] && ioraw3=$( awk 'BEGIN{print '$ioraw3' * 1024}' )
 ioall=$( awk 'BEGIN{print '$ioraw1' + '$ioraw2' + '$ioraw3'}' )
 ioavg=$( awk 'BEGIN{printf "%.1f", '$ioall' / 3}' )
-echo "Average I/O speed    : $ioavg MB/s"
+echo "平均 I/O     : $ioavg MB/s"
 next
