@@ -64,7 +64,7 @@ echo "CPU 型号     : $cname"
 echo "CPU 核心     : $cores 颗"
 echo "CPU 频率     : $freq MHz"
 echo "硬盘大小     : $disk_total_size GB ($disk_used_size GB Used)"
-echo "Mem大小      : $tram MB ($uram MB Used)"
+echo "内存大小      : $tram MB ($uram MB Used)"
 echo "交换空间     : $swap MB ($uswap MB Used)"
 echo "运行时间     : $up"
 echo "当前负载     : $load"
@@ -72,11 +72,11 @@ echo "发行版本     : $opsy"
 echo "系统类型     : $arch ($lbit Bit)"
 echo "内核版本     : $kern"
 io1=$( io_test )
-echo "I/O 测试     : $io1"
+echo "I/O 一次     : $io1"
 io2=$( io_test )
-echo "I/O 测试     : $io2"
+echo "I/O 二次     : $io2"
 io3=$( io_test )
-echo "I/O 测试     : $io3"
+echo "I/O 三次     : $io3"
 ioraw1=$( echo $io1 | awk 'NR==1 {print $1}' )
 [ "`echo $io1 | awk 'NR==1 {print $2}'`" == "GB/s" ] && ioraw1=$( awk 'BEGIN{print '$ioraw1' * 1024}' )
 ioraw2=$( echo $io2 | awk 'NR==1 {print $1}' )
