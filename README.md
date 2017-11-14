@@ -30,12 +30,11 @@ wget -qO- 12345bt.github.io/cesu.sh | bash
 
    1. wget --no-check-certificate 12345bt.github.io/youhua.sh && chmod +x youhua.sh && ./youhua.sh
 
-## 一键更新pip库   pip-review使用方法
+### 一键更新pip库   pip-review使用方法
 
-- List
-- 1. pip install pip-review
+**pip install pip-review**
 
-- 2. pip-review --local --interactive
+- pip-review --local --interactive
 
 ## - 亚当与夏娃的电影剧情
 ## 剧情介绍：
