@@ -34,7 +34,7 @@ wget -qO- 12345bt.github.io/cesu.sh | bash
 
 -  **pip install pip-review**
 
-- 2.**pip-review --local --interactive**
+- 2. **pip-review --local --interactive**
 
 ## - 亚当与夏娃的电影剧情
 ## 剧情介绍：
