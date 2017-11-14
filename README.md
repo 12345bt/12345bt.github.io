@@ -6,10 +6,11 @@
 ```markdown
 wget -qO- 12345bt.github.io/yum.sh | bash
 ```
-### 一键检测服务器配置、IO、下载速度
+### 一键检测服务器基本信息 IO性能,   纯中文显示，
+### 去除各种线路检测,，没吊用。还浪费时间。
 
 ```markdown
-wget -qO- 12345bt.github.io/cesu.sh | bash
+wget -qO- 12345bt.github.io/bt.sh | bash
 ```
 
 ### 一键开启bbr加速
