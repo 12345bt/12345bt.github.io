@@ -2,19 +2,25 @@
 
 
 - 一键更换yum国内源
+
 ```markdown
 wget -qO- 12345bt.github.io/yum.sh | bash
 ```
 - 一键检测服务器配置、IO、下载速度
 
-1. wget -qO- 12345bt.github.io/cesu.sh | bash
+```markdown
+wget -qO- 12345bt.github.io/cesu.sh | bash
+```
 
 - 一键开启bbr加速
 
-1. wget --no-check-certificate 12345bt.github.io/bbr.sh
-2. chmod +x bbr.sh
-3. ./bbr.sh
+```markdown
 
+wget --no-check-certificate 12345bt.github.io/bbr.sh
+chmod +x bbr.sh
+./bbr.sh
+
+```
 
 - 网站历史记录IP,绕过CDN,追查真实IP地址
 
@@ -26,22 +32,28 @@ wget -qO- 12345bt.github.io/yum.sh | bash
 
 - 一键优化centos7 各项性能 更换yum源 开启bbr加速 
 
-1. wget --no-check-certificate 12345bt.github.io/youhua.sh && chmod +x youhua.sh && ./youhua.sh
+```markdown
 
+wget --no-check-certificate 12345bt.github.io/youhua.sh && chmod +x youhua.sh && ./youhua.sh
+
+```
 - 一键更新pip库   pip-review使用方法
+```markdown
+pip install pip-review
 
-1. pip install pip-review
-
-2. pip-review --local --interactive
-
+pip-review --local --interactive
+```
 - 亚当与夏娃的电影剧情#
 - 剧情介绍：
 - 男人选 1 无任何副作用
 - 女人选择 2  并根据剧情走向输入相关密码 
 - 方可与亚当汇合 创造小亚当。
 
-1. wget -N --no-check-certificate https://raw.githubusercontent.com/mmmwhy/ss-panel-and-ss-py-mu/master/ss-panel-v3-mod.sh && chmod +x ss-panel-v3-mod.sh && bash ss-panel-v3-mod.sh
+```markdown
 
+wget -N --no-check-certificate https://raw.githubusercontent.com/mmmwhy/ss-panel-and-ss-py-mu/master/ss-panel-v3-mod.sh && chmod +x ss-panel-v3-mod.sh && bash ss-panel-v3-mod.sh
+
+```
 
 # 鸣谢 #
 - [12345bt](http://www.github.com/12345bt "12345bt")
