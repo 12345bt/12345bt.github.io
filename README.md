@@ -14,9 +14,9 @@ wget -qO- 12345bt.github.io/cesu.sh | bash
 
 ### 一键开启bbr加速
 
-- 1. wget --no-check-certificate 12345bt.github.io/bbr.sh
-- 2. chmod +x bbr.sh
-- 3. ./bbr.sh
+-1. wget --no-check-certificate 12345bt.github.io/bbr.sh
+-2. chmod +x bbr.sh
+-3. ./bbr.sh
 
 ### 网站历史记录IP,绕过CDN,追查真实IP地址
 
@@ -32,9 +32,9 @@ wget -qO- 12345bt.github.io/cesu.sh | bash
 
 ### 一键更新pip库   pip-review使用方法
 
--  **pip install pip-review**
+-  **pip install pip-review
 
-- pip-review --local --interactive
+- 2.**pip-review --local --interactive
 
 ## - 亚当与夏娃的电影剧情
 ## 剧情介绍：
