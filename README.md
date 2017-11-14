@@ -28,10 +28,11 @@ wget -qO- 12345bt.github.io/cesu.sh | bash
 
 ## 一键优化centos7 各项性能 更换yum源 开启bbr加速 
 
-- 1. wget --no-check-certificate 12345bt.github.io/youhua.sh && chmod +x youhua.sh && ./youhua.sh
+   1. wget --no-check-certificate 12345bt.github.io/youhua.sh && chmod +x youhua.sh && ./youhua.sh
 
 ## 一键更新pip库   pip-review使用方法
 
+- List
 - 1. pip install pip-review
 
 - 2. pip-review --local --interactive
