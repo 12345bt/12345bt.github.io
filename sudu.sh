@@ -18,7 +18,7 @@ get_opsy() {
 }
 
 next() {
-    printf "%-50s\n" "-" | sed 's/\s/-/g'
+    printf "%-70s\n" "-" | sed 's/\s/-/g'
 }
 
 io_test() {
@@ -47,7 +47,7 @@ tram=$( free -m | awk '/Mem/ {print $2}' )
 uram=$( free -m | awk '/Mem/ {print $3}' )
 swap=$( free -m | awk '/Swap/ {print $2}' )
 uswap=$( free -m | awk '/Swap/ {print $3}' )
-up=$( awk '{a=$1/86400;b=($1%86400)/3600;c=($1%3600)/60} {printf("%d days, %d hour %d min\n",a,b,c)}' /proc/uptime )
+up=$( awk '{a=$1/86400;b=($1%86400)/3600;c=($1%3600)/60} {printf("%d 天, %d 小时 %d 分\n",a,b,c)}' /proc/uptime )
 load=$( w | head -1 | awk -F'load average:' '{print $2}' | sed 's/^[ \t]*//;s/[ \t]*$//' )
 opsy=$( get_opsy )
 arch=$( uname -m )
