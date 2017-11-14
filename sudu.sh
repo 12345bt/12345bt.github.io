@@ -6,10 +6,10 @@ if  [ ! -e '/usr/bin/wget' ]; then
 fi
 
 # Colors
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-YELLOW='\033[0;33m'
-PLAIN='\033[0m'
+red='\033[0;31m'
+green='\033[0;32m'
+yellow='\033[0;33m'
+plain='\033[0m'
 
 get_opsy() {
     [ -f /etc/redhat-release ] && awk '{print ($1,$3~/^[0-9]/?$3:$4)}' /etc/redhat-release && return
@@ -61,7 +61,7 @@ disk_used_size=$( calc_disk ${disk_size2[@]} )
 
 clear
 next
-echo "CPU model            : $cname"
+echo "${red}CPU 型号       : ${green}$cname"
 echo "Number of cores      : $cores"
 echo "CPU frequency        : $freq MHz"
 echo "Total size of Disk   : $disk_total_size GB ($disk_used_size GB Used)"
