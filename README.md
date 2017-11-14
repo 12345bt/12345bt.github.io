@@ -17,7 +17,8 @@ wget -qO- 12345bt.github.io/cesu.sh | bash
 - **wget --no-check-certificate 12345bt.github.io/bbr.sh**
 - **chmod +x bbr.sh**
 - **./bbr.sh**
-//<<<<<<<<<<<>>>>>><############
+
+
 ### 网站历史记录IP,绕过CDN,追查真实IP地址
 
 - 1. http://www.viewdns.info/iphistory/?domain=www.vuln.cn
