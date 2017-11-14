@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# 一键检测服务器基本信息 IO性能,   纯中文显示，好歹咱是中国人，做点小贡献。
+# 去除各种线路检测,，没吊用。还浪费时间。
+
 
 if  [ ! -e '/usr/bin/wget' ]; then
     echo "Error: wget command not found. You must be install wget command at first."
