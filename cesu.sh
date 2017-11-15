@@ -64,7 +64,7 @@ tram=$( free -m | awk '/Mem/ {print $2}' )
 uram=$( free -m | awk '/Mem/ {print $3}' )
 swap=$( free -m | awk '/Swap/ {print $2}' )
 uswap=$( free -m | awk '/Swap/ {print $3}' )
-up=$( awk '{a=$1/86400;b=($1%86400)/3600;c=($1%3600)/60} {printf("%d days %d hour %d min\n",a,b,c)}' /proc/uptime )
+up=$( awk '{a=$1/86400;b=($1%86400)/3600;c=($1%3600)/60} {printf("%d 天 %d 小时 %d 分钟\n",a,b,c)}' /proc/uptime )
 load=$( w | head -1 | awk -F'load average:' '{print $2}' | sed 's/^[ \t]*//;s/[ \t]*$//' )
 opsy=$( get_opsy )
 arch=$( uname -m )
@@ -79,27 +79,27 @@ ptime=$(power_time)
 
 clear
 next
-echo -e "发行版本     : ${SKYBLUE}$opsy${PLAIN}"
-echo -e "系统类型     : ${SKYBLUE}$arch ($lbit Bit)${PLAIN}"
-echo -e "内核版本     : ${SKYBLUE}$kern${PLAIN}"
-echo -e "CPU 型号     : ${SKYBLUE}$cname${PLAIN}"
-echo -e "CPU 核心     : ${SKYBLUE}$cores${PLAIN} 颗"
-echo -e "CPU 频率     : ${SKYBLUE}$freq MHz${PLAIN}"
-echo -e "硬盘大小     : ${SKYBLUE}$disk_total_size GB ($disk_used_size GB Used)${PLAIN}"
-echo -e "内存大小     : ${SKYBLUE}$tram MB ($uram MB Used)${PLAIN}"
-echo -e "交换空间     : ${SKYBLUE}$swap MB ($uswap MB Used)${PLAIN}"
-echo -e "运行时间      : ${SKYBLUE}$up${PLAIN}"
-echo -e "当前负载     : ${SKYBLUE}$load${PLAIN}"
+echo -e "发行版本     : ${YELLOW}$opsy${PLAIN}"
+echo -e "系统类型     : ${YELLOW}$arch ($lbit Bit)${PLAIN}"
+echo -e "内核版本     : ${YELLOW}$kern${PLAIN}"
+echo -e "CPU 型号     : ${YELLOW}$cname${PLAIN}"
+echo -e "CPU 核心     : ${YELLOW}$cores${PLAIN} 颗"
+echo -e "CPU 频率     : ${YELLOW}$freq MHz${PLAIN}"
+echo -e "硬盘大小     : ${YELLOW}$disk_total_size GB ($disk_used_size GB Used)${PLAIN}"
+echo -e "内存大小     : ${YELLOW}$tram MB ($uram MB Used)${PLAIN}"
+echo -e "交换空间     : ${YELLOW}$swap MB ($uswap MB Used)${PLAIN}"
+echo -e "运行时间     : ${YELLOW}$up${PLAIN}"
+echo -e "当前负载     : ${YELLOW}$load${PLAIN}"
 next
-echo -n "I/O speed( 32M )     : "
+echo -n "I/O 测 32M   : "
 io1=$( io_test 32k 1k )
-echo -e "${YELLOW}$io1${PLAIN}"
-echo -n "I/O speed( 256M )    : "
+echo -e "${SKYBLUE}$io1${PLAIN}"
+echo -n "I/O 测 256M  : "
 io2=$( io_test 64k 4k )
-echo -e "${YELLOW}$io2${PLAIN}"
-echo -n "I/O speed( 2G )      : "
+echo -e "${SKYBLUE}$io2${PLAIN}"
+echo -n "I/O 测 2G    : "
 io3=$( io_test 64k 32k )
-echo -e "${YELLOW}$io3${PLAIN}"
+echo -e "${SKYBLUE}$io3${PLAIN}"
 ioraw1=$( echo $io1 | awk 'NR==1 {print $1}' )
 [ "`echo $io1 | awk 'NR==1 {print $2}'`" == "GB/s" ] && ioraw1=$( awk 'BEGIN{print '$ioraw1' * 1024}' )
 ioraw2=$( echo $io2 | awk 'NR==1 {print $1}' )
@@ -108,5 +108,5 @@ ioraw3=$( echo $io3 | awk 'NR==1 {print $1}' )
 [ "`echo $io3 | awk 'NR==1 {print $2}'`" == "GB/s" ] && ioraw3=$( awk 'BEGIN{print '$ioraw3' * 1024}' )
 ioall=$( awk 'BEGIN{print '$ioraw1' + '$ioraw2' + '$ioraw3'}' )
 ioavg=$( awk 'BEGIN{printf "%.1f", '$ioall' / 3}' )
-echo -e "Average I/O speed    : ${YELLOW}$ioavg MB/s${PLAIN}"
+echo -e "I/O 平均值   : ${SKYBLUE}$ioavg MB/s${PLAIN}"
 next
