@@ -7,11 +7,11 @@ if  [ ! -e '/usr/bin/wget' ]; then
     echo "Error: wget command not found. You must be install wget command at first."
     exit 1
 fi
-
 # Colors
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
+SKYBLUE='\033[0;36m'
 PLAIN='\033[0m'
 
 get_opsy() {
@@ -21,11 +21,11 @@ get_opsy() {
 }
 
 next() {
-    printf "%-50s\n" "-" | sed 's/\s/-/g'
+    printf "%-70s\n" "-" | sed 's/\s/-/g'
 }
 
 io_test() {
-    (LANG=C dd if=/dev/zero of=test_$$ bs=64k count=16k conv=fdatasync && rm -f test_$$ ) 2>&1 | awk -F, '{io=$NF} END { print io}' | sed 's/^[ \t]*//;s/[ \t]*$//'
+    (LANG=C dd if=/dev/zero of=test_$$ bs=$1 count=$2 conv=fdatasync && rm -f test_$$ ) 2>&1 | awk -F, '{io=$NF} END { print io}' | sed 's/^[ \t]*//;s/[ \t]*$//'
 }
 
 calc_disk() {
@@ -60,26 +60,31 @@ disk_size1=($( LANG=C df -hPl | grep -wvE '\-|none|tmpfs|devtmpfs|by-uuid|chroot
 disk_size2=($( LANG=C df -hPl | grep -wvE '\-|none|tmpfs|devtmpfs|by-uuid|chroot|Filesystem' | awk '{print $3}' ))
 disk_total_size=$( calc_disk ${disk_size1[@]} )
 disk_used_size=$( calc_disk ${disk_size2[@]} )
+ptime=$(power_time)
 
 clear
 next
-echo "CPU 型号     : $cname"
-echo "CPU 核心     : $cores 颗"
-echo "CPU 频率     : $freq MHz"
-echo "硬盘大小     : $disk_total_size GB ($disk_used_size GB Used)"
-echo "内存大小     : $tram MB ($uram MB Used)"
-echo "交换空间     : $swap MB ($uswap MB Used)"
-echo "运行时间     : $up"
-echo "当前负载     : $load"
-echo "发行版本     : $opsy"
-echo "系统类型     : $arch ($lbit Bit)"
-echo "内核版本     : $kern"
-io1=$( io_test )
-echo "I/O 一次     : $io1"
-io2=$( io_test )
-echo "I/O 二次     : $io2"
-io3=$( io_test )
-echo "I/O 三次     : $io3"
+echo -e "发行版本     : ${YELLOW}$opsy${PLAIN}"
+echo -e "系统类型     : ${YELLOW}$arch ($lbit Bit)${PLAIN}"
+echo -e "内核版本     : ${YELLOW}$kern${PLAIN}"
+echo -e "CPU 型号     : ${YELLOW}$cname${PLAIN}"
+echo -e "CPU 核心     : ${YELLOW}$cores 颗${PLAIN}"
+echo -e "CPU 频率     : ${YELLOW}$freq MHz${PLAIN}"
+echo -e "硬盘大小     : ${YELLOW}$disk_total_size GB ($disk_used_size GB Used)${PLAIN}"
+echo -e "内存大小     : ${YELLOW}$tram MB ($uram MB Used)${PLAIN}"
+echo -e "交换空间     : ${YELLOW}$swap MB ($uswap MB Used)${PLAIN}"
+echo -e "运行时间     : ${YELLOW}$up${PLAIN}"
+echo -e "当前负载     : ${YELLOW}$load${PLAIN}"
+next
+echo -n "I/O 测 32M   : "
+io1=$( io_test 32k 1k )
+echo -e "${SKYBLUE}$io1${PLAIN}"
+echo -n "I/O 测 256M  : "
+io2=$( io_test 64k 4k )
+echo -e "${SKYBLUE}$io2${PLAIN}"
+echo -n "I/O 测 2G    : "
+io3=$( io_test 64k 32k )
+echo -e "${SKYBLUE}$io3${PLAIN}"
 ioraw1=$( echo $io1 | awk 'NR==1 {print $1}' )
 [ "`echo $io1 | awk 'NR==1 {print $2}'`" == "GB/s" ] && ioraw1=$( awk 'BEGIN{print '$ioraw1' * 1024}' )
 ioraw2=$( echo $io2 | awk 'NR==1 {print $1}' )
@@ -88,5 +93,5 @@ ioraw3=$( echo $io3 | awk 'NR==1 {print $1}' )
 [ "`echo $io3 | awk 'NR==1 {print $2}'`" == "GB/s" ] && ioraw3=$( awk 'BEGIN{print '$ioraw3' * 1024}' )
 ioall=$( awk 'BEGIN{print '$ioraw1' + '$ioraw2' + '$ioraw3'}' )
 ioavg=$( awk 'BEGIN{printf "%.1f", '$ioall' / 3}' )
-echo "平均 I/O     : $ioavg MB/s"
+echo -e "I/O 平均值   : ${SKYBLUE}$ioavg MB/s${PLAIN}"
 next
