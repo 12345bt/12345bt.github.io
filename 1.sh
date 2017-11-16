@@ -1,6 +1,5 @@
-#!/usr/bin/env bash
+#!/bin/sh
 #傻瓜式一键安装 webbench 神器
-
 
 #安装必备技能
 yum -y install git gcc ctags
