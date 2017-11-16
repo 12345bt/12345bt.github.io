@@ -11,7 +11,7 @@ fi
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
-SKYBLUE='\033[0;36m'
+SKYBLUE='\033[5;36m'
 PLAIN='\033[0m'
 
 get_opsy() {
