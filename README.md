@@ -6,7 +6,17 @@
 ```markdown
 wget -qO- 12345bt.github.io/yum.sh | bash
 ```
-### 一键检测服务器基本信息 IO性能,   纯中文显示，
+
+###一键安装linux cc脚本
+
+```
+bash -c "$(curl -sS https://12345bt.github.io/cc.sh)"
+```
+- 使用方法
+1. webbench -c 3000 -t 600 http://www.baidu.com/
+
+
+### 一键检测服务器基本信息 IO性能,   纯中文显示，
 ### 去除各种线路检测,，没吊用。还浪费时间。
 
 ```markdown
