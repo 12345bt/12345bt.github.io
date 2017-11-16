@@ -21,7 +21,7 @@ get_opsy() {
 }
 
 next() {
-    printf "%-70s\n" "-" | sed 's/\s/-/g'
+    printf "%-60s\n" "-" | sed 's/\s/-/g'
 }
 
 io_test() {
