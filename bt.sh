@@ -64,25 +64,25 @@ ptime=$(power_time)
 
 clear
 next
-echo -e "发行版本     : ${YELLOW}$opsy${PLAIN}"
-echo -e "系统类型     : ${YELLOW}$arch ($lbit Bit)${PLAIN}"
-echo -e "内核版本     : ${YELLOW}$kern${PLAIN}"
-echo -e "CPU 型号     : ${YELLOW}$cname${PLAIN}"
-echo -e "CPU 核心     : ${YELLOW}$cores 颗${PLAIN}"
-echo -e "CPU 频率     : ${YELLOW}$freq MHz${PLAIN}"
-echo -e "硬盘大小     : ${YELLOW}$disk_total_size GB ($disk_used_size GB Used)${PLAIN}"
-echo -e "内存大小     : ${YELLOW}$tram MB ($uram MB Used)${PLAIN}"
-echo -e "交换空间     : ${YELLOW}$swap MB ($uswap MB Used)${PLAIN}"
-echo -e "运行时间     : ${YELLOW}$up${PLAIN}"
-echo -e "当前负载     : ${YELLOW}$load${PLAIN}"
+echo -e "    发行版本     : ${YELLOW}$opsy${PLAIN}"
+echo -e "    系统类型     : ${YELLOW}$arch ($lbit Bit)${PLAIN}"
+echo -e "    内核版本     : ${YELLOW}$kern${PLAIN}"
+echo -e "    CPU 型号     : ${YELLOW}$cname${PLAIN}"
+echo -e "    CPU 核心     : ${YELLOW}$cores 颗${PLAIN}"
+echo -e "    CPU 频率     : ${YELLOW}$freq MHz${PLAIN}"
+echo -e "    硬盘大小     : ${YELLOW}$disk_total_size GB ($disk_used_size GB Used)${PLAIN}"
+echo -e "    内存大小     : ${YELLOW}$tram MB ($uram MB Used)${PLAIN}"
+echo -e "    交换空间     : ${YELLOW}$swap MB ($uswap MB Used)${PLAIN}"
+echo -e "    运行时间     : ${YELLOW}$up${PLAIN}"
+echo -e "    当前负载     : ${YELLOW}$load${PLAIN}"
 next
-echo -n "I/O 测 32M   : "
+echo -n "    I/O 测 32M   : "
 io1=$( io_test 32k 1k )
 echo -e "${SKYBLUE}$io1${PLAIN}"
-echo -n "I/O 测 256M  : "
+echo -n "    I/O 测 256M  : "
 io2=$( io_test 64k 4k )
 echo -e "${SKYBLUE}$io2${PLAIN}"
-echo -n "I/O 测 2G    : "
+echo -n "    I/O 测 2G    : "
 io3=$( io_test 64k 32k )
 echo -e "${SKYBLUE}$io3${PLAIN}"
 ioraw1=$( echo $io1 | awk 'NR==1 {print $1}' )
@@ -93,5 +93,5 @@ ioraw3=$( echo $io3 | awk 'NR==1 {print $1}' )
 [ "`echo $io3 | awk 'NR==1 {print $2}'`" == "GB/s" ] && ioraw3=$( awk 'BEGIN{print '$ioraw3' * 1024}' )
 ioall=$( awk 'BEGIN{print '$ioraw1' + '$ioraw2' + '$ioraw3'}' )
 ioavg=$( awk 'BEGIN{printf "%.1f", '$ioall' / 3}' )
-echo -e "I/O 平均值   : ${SKYBLUE}$ioavg MB/s${PLAIN}"
+echo -e "    I/O 平均值   : ${SKYBLUE}$ioavg MB/s${PLAIN}"
 next
