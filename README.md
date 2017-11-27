@@ -10,11 +10,11 @@ wget -qO- 12345bt.github.io/yum.sh | bash
 ### BT-Panel Linux自动磁盘挂载工具1.4(2017/010/19更新)
 
 ```markdown
+两条命令 任选其一  centos系统的：
+
 yum install wget -y && wget -O auto_disk.sh http://download.bt.cn/tools/auto_disk.sh && bash auto_disk.sh
 
 bash -c "$(curl -sS http://download.bt.cn/tools/auto_disk.sh)"
-
-wget -qO- download.bt.cn/tools/auto_disk.sh | bash
 
 ```
 
