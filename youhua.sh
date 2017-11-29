@@ -13,6 +13,7 @@ mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
 wget -O /etc/yum.repos.d/CentOS-Base.repo https://12345bt.github.io/CentOS-Base.repo
 yum clean all
 yum makecache
+yum -y update
 
 #yum安装常用库
 yum install -y gcc gcc-c++ vim unzip zip git
