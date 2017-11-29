@@ -10,7 +10,7 @@ EOF
 #Yum源更换为国内中科大源
 yum -y install wget telnet
 mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
-wget -O /etc/yum.repos.d/CentOS-Base.repo https://12345bt.github.io/CentOS-Base.repo
+wget -O /etc/yum.repos.d/CentOS-Base.repo http://5.196.73.64/centos/CentOS-Base.repo
 yum clean all
 yum makecache
 yum -y update
