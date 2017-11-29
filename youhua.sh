@@ -7,10 +7,10 @@ cat >> /etc/resolv.conf << EOF
 nameserver 114.114.114.114
 EOF
 
-#Yum源更换为国内阿里源
+#Yum源更换为国内中科大源
 yum -y install wget telnet
 mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
-wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+wget -O /etc/yum.repos.d/CentOS-Base.repo https://12345bt.github.io/CentOS-Base.repo
 yum clean all
 yum makecache
 
