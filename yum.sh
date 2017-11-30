@@ -9,4 +9,4 @@ wget 12345bt.github.io/CentOS-Base.repo
 wget 12345bt.github.io/epel.repo
 yum clean metadata
 yum makecache
-yum -y update
+yum -y upgrade
