@@ -1,6 +1,6 @@
 #!/bin/sh
 
-#一键更换中科院yum源
+#一键更换私人yum源
 cd /etc/yum.repos.d
 mv CentOS-Base.repo CentOS-Base.repo.backup
 mv epel.repo epel.repo.backup
