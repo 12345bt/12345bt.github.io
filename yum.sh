@@ -10,6 +10,3 @@ wget 12345bt.github.io/epel.repo
 yum clean metadata
 yum makecache
 yum -y upgrade
-
-#重启服务器
-shutdown -r now
