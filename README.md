@@ -1,5 +1,22 @@
 # linux 一键脚本 #
 
+### 一键清除3个月以上 点击率低于100的数据*
+
+```markdown
+
+空密码 进入mysql
+
+mysql
+
+进入zsky库
+
+use zsky;
+
+清除数据命令
+
+delete from search_hash where requests<1000 and last_seen<DATE_SUB(CURDATE(), INTERVAL 3 MONTH);
+
+```
 
 ### 一键更换yum国内源*
 
@@ -28,7 +45,7 @@ bash -c "$(curl -sS https://12345bt.github.io/cc.sh)"
 1. webbench -c 3000 -t 600 http://www.baidu.com/
 
 
-### 一键检测服务器基本信息 IO性能,   纯中文显示，
+### 一键检测服务器基本信息 IO性能,   纯中文显示，
 ### 去除各种线路检测,，没吊用。还浪费时间。
 
 ```markdown
@@ -52,11 +69,11 @@ wget -qO- 12345bt.github.io/bt.sh | bash
 
 ### 一键优化centos7 各项性能 更换yum源 开启bbr加速 
 
- -  **wget --no-check-certificate 12345bt.github.io/youhua.sh && chmod +x youhua.sh && ./youhua.sh**
+ -  **wget --no-check-certificate 12345bt.github.io/youhua.sh && chmod +x youhua.sh && ./youhua.sh**
 
-### 一键更新pip库   pip-review使用方法
+### 一键更新pip库   pip-review使用方法
 
--  **pip install pip-review**
+-  **pip install pip-review**
 
 -  **pip-review --local --interactive**
 
